@@ -68,7 +68,14 @@ $("#final-submit").click(function(e) {
         flights:$('#flight').val(),
         state:$('#state').val()
     };
-
+    for(let x in user_info){
+        if (user_info[x] == '')
+        {
+            alert("Please fill in every field")
+            return 
+        }
+      }
+      
     //console.log(user_info);
     $.ajax({
         type: "POST",

@@ -24,7 +24,14 @@ $(document).ready(function() {
               password: $("#password-signup").val(),
               location: $("#location").val()
           }
-
+          for(let x in user_info){
+            if (user_info[x] == '')
+            {
+              alert('Please fill in every field')
+              return 
+            }
+          }
+          
 
       $.ajax({
           url: '/processing_signup',
@@ -69,6 +76,15 @@ $(document).ready(function() {
               email: $("#email-signin").val(),
               password: $("#password-signin").val(),
           }
+
+          for(let x in user_signin){
+            if (user_signin[x] == '')
+            {
+              alert("Please fill in every field")
+              return 
+            }
+          }
+          
       $.ajax({
           type: "POST",
           url: '/processing_signin',
@@ -93,6 +109,9 @@ $(document).ready(function() {
       .done(function(data) {
         if (data.resp === "Correct"){
         window.location = '/MyAccount';}
+        else{
+          alert(data.resp2);
+        }
       });
        e.preventDefault();
   });

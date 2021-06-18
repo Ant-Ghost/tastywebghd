@@ -481,6 +481,13 @@ $("#next1").click(function(e) {
 
     //console.log(user_info);
     //alert('see console');
+    for(let x in user_info){
+      if (user_info[x] == '')
+      {
+        alert("Please fill in every field")
+        return 
+      }
+    }
     $.ajax({
         type: "POST",
         url: '/questionare_update',
