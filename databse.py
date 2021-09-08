@@ -10,7 +10,7 @@ app.secret_key = 'random key'
 class Database_Soumee():
 
 	gbl_email=''
-	engine= create_engine(r'db2+ibm_db://lqd29580:w7db0p6rrq%5Ecg8g6@dashdb-txn-sbox-yp-dal09-10.services.dal.bluemix.net:50000/BLUDB')
+	engine= create_engine(r'db2+ibm_db://jhd71386:zwu62IhQKVPPp7JN@fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud:32731/bludb?authSource=admin&replicaSet=replset')
 	db = scoped_session(sessionmaker(bind=engine))
 
 	def __init__(self):
